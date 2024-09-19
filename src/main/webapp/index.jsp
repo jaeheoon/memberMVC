@@ -5,24 +5,28 @@
 <head>
 <meta charset="utf-8">
 <title></title>
+<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-<c:set var="context" value="${ pageContext.request.contextPath }" />
-Context = ${ context }
-<c:if test="${ sessionScope.memberDTO.name == null }">
-	<h2>메인 화면</h2>
-	<!-- <h3><a href="./member/writeForm.do">회원가입</a></h3>
-		 <h3><a href="./member/loginForm.do">로그인</a></h3> -->
-	<h3><a href="${ context }/member/writeForm.do">회원가입</a></h3>
-	<h3><a href="${ context }/member/loginForm.do">로그인</a></h3>
-</c:if>
-<c:if test="${ sessionScope.memberDTO.name != null }">
-	<h2>${ sessionScope.memberDTO.name }님의 메인 화면</h2>
-	<h3><a href="${ context }/member/updateForm.do">회원정보 수정</a></h3>
-	<h3><a href="${ context }/member/logout.do">로그아웃</a></h3>
-	<h3><a href="${ context }/board/boardWriteForm.jsp">글쓰기</a></h3>
-</c:if>
-	<h3><a href="${ context }/board/boardListForm.jsp?page=1">목록</a></h3>
-	
+	<div id="wrap">
+		<div id="header">
+			<jsp:include page="./main/header.jsp" />
+			<jsp:include page="./main/menu.jsp" />
+		</div>
+		
+		<div id="container">
+			<div id="nav">
+				<jsp:include page="./main/nav.jsp" />
+			</div>
+			<div id="section">
+				<h3>
+					저희 홈페이지를 방문해주셔서 감사합니다.<br><br>
+					<img alt="홈페이지 화면" src="./image/절벽위섬_1920.jpg" width="100%" height="100%">
+				</h3>
+			</div>
+		</div>
+		
+		<div id="footer"></div>
+	</div>
 </body>
 </html>

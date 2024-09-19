@@ -45,7 +45,7 @@ public class UpdateService implements CommandProcess {
 		session.setAttribute("memberEmail", email);
 		request.setAttribute("updateCheck", check);
 		
-		return "/member/memberUpdate.jsp";
+		return "none";
 	}
 
 }

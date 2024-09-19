@@ -1,0 +1,64 @@
+@import url("index.css");
+table {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+table tr:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+table .left {
+    text-align: left;
+}
+thead, tbody, tfoot, tr {
+    display: block;
+    width: 100%;
+}
+td, th {
+    display: block;
+    float: left;
+    padding: 10px 0;
+}
+table thead {
+    border-bottom: solid 2px #285E8E;
+    font-weight: bold;
+}
+table tbody tr {
+    border-bottom: 1px dotted #ccc;
+}
+.article table .seq {
+    width: 10%;
+}
+.article table .subject {
+    width: 60%;
+}
+.article table .id {
+    width: 10%;
+}
+.article table .hit {
+    width: 10%;
+}
+.article table .logtime {
+    width: 10%;
+}
+#currentPaging {
+	border: 1px solid blue;
+	color: red;
+}
+#paging {
+	color: black;
+	float: none;
+}
+span{
+	font-size: 13pt;
+	padding: 5px 8px;
+	margin: 4px;
+}
+span:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}

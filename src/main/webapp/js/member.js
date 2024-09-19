@@ -55,30 +55,35 @@ $(function(){
 	}
 	
 	// 글 작성 버튼 클릭 시 유효성 검사
-	$('#joinBtn, #updateBtn').click(function(event){
+	$('#joinBtn').click(function(event){
 		if (!validateForm()) {
 			event.preventDefault(); // 폼 제출 방지
 		} else {
-			$('form').submit();
+			//$('form').submit();
+			$.ajax({
+				type: 'post',
+				url: './write.do',
+				data: $('#memberWriteForm').serialize(),
+				success: function(){
+					alert('회원가입을 축하합니다.');
+					location.href='../index.do';
+				},
+				error: function(e){
+					console.log(e);
+				}
+			});
 		}
 	});
 
-	/* memberUpdate ajax로 사용 코드
-	$('#updateBtn').click(function(){
-		$('#nameDiv').empty();
-		$('#pwdDiv').empty();
-		
-		if($('#name').val() == '')
-		    $('#nameDiv').html('이름 입력');
-		else if($('#pwd').val() == '')
-		    $('#pwdDiv').html('비밀번호 입력');
-		else if($('#pwd').val() != $('#repwd').val())
-		    $('#pwdDiv').html('비밀번호가 맞지 않습니다');
-		else
+	/* memberUpdate ajax로 사용 코드 */
+	$('#updateBtn').click(function(event){
+		if (!validateForm()) {
+			event.preventDefault(); // 폼 제출 방지
+		} else
 		    $.ajax({
 		        type: 'post',
-		        url: 'update.jsp',
-		        data: $('form[name="updateForm"]').serialize(), // name=값&id=값&~~~~
+		        url: './update.do',
+		        data: $('#memberUpdateForm').serialize(), // name=값&id=값&~~~~
 		        success: function(){
 		            alert('회원정보 수정 완료');
 		            location.href = '../index.jsp';
@@ -88,7 +93,7 @@ $(function(){
 		        }
 		    });
 	});
-	*/
+	
 	
 	// ID 중복체크
 	$('#id').on('focusout', function() {

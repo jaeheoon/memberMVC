@@ -28,8 +28,9 @@ public class WriteService implements CommandProcess{
 				zipcode, addr1, addr2);
 		
 		MemberDAO memberDAO = MemberDAO.getInstance();
-		boolean check = memberDAO.writeMember(memberDTO);
-		request.setAttribute("check", check);
-		return "/member/memberWrite.jsp";
+		memberDAO.writeMember(memberDTO);
+		//boolean check = memberDAO.writeMember(memberDTO);
+		//request.setAttribute("check", check);
+		return "none";
 	}
 }

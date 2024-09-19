@@ -16,6 +16,6 @@ public class LogoutService implements CommandProcess{
 		
 		//세션에 있는 객체들 한번에 다 삭제
 		//session.invalidate();
-		return "/member/memberLogout.jsp";
+		return "none";
 	}
 }

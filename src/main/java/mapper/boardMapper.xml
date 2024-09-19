@@ -10,18 +10,8 @@
               	select * from board order by ref desc, step asc
               	) tt 
              ) 
-       <![CDATA[
-       where rn >= #{startNum}  and rn <= #{endNum}
-       ]]>
-       <!-- select * 
-	 	from ( 
-	 	    select rownum rn, tt.* 
-            from ( 
-              	select * from board order by ref desc, step asc 
-              	) tt 
-             ) 
-       where rn between #{startNum} and #{endNum}  --> 
-	 </select> 
+       where rn between #{startNum} and #{endNum}
+	 </select>
 	 
 	 <insert id="writeBoard" parameterType="boardDTO">
 	 	insert into board(seq, name, id, email, subject, content, ref)

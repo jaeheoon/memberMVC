@@ -20,18 +20,26 @@ th, td {
 #pwd {
 	width: 250px;
 }
-div {
+#loginResult {
+	margin-bottom: 5px;
+}
+#memberLoginForm div {
 	color: red;
-	font-size: 9px;
+	font-size: 11px;
 	font-weight: bold;
+}
+#memberLoginForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 30px auto;
+	text-align: left;
 }
 </style>
 </head>
 <body>
-	<h3>
-		<img alt="홈" src="../image/짱구.jpg" width="150px" height="250px" onclick="location.href='../index.do'" style="cursor: pointer;"> 로그인
-	</h3>
 	<form action="./login.do" method="post" name="memberLoginForm" id="memberLoginForm">
+		<jsp:include page="../main/header.jsp" />
 		<table border="1">
 			<tr>
 				<th>아이디</th>
@@ -49,6 +57,7 @@ div {
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
+					<div id="loginResult"></div>
 					<input type="button" id="loginBtn" value="로그인">
 					<input type="button" id="joinBtn" value="회원가입" onclick="memberWrite()">
 					<input type="button" value="뒤로" onclick="history.go(-1);">

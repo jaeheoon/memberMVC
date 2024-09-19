@@ -27,18 +27,23 @@ th, td {
 #addr1, #addr2 {
 	width: 80%;
 }
-div {
+#memberUpdateForm div {
 	color: red;
 	font-size: 9px;
 	font-weight: bold;
 }
+#memberUpdateForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 30px auto;
+	text-align: left;
+}
 </style>
 </head>
 <body>
-	<h3>
-		<img alt="홈" src="../image/짱구.jpg" width="150px" height="250px" onclick="location.href='../index.do'" style="cursor: pointer;"> 회원정보 수정
-	</h3>
-	<form action="./update.do" method="post" name="memberUpdateForm" id="memberUpdateForm">
+	<form name="memberUpdateForm" id="memberUpdateForm">
+		<jsp:include page="../main/header.jsp" />
 		<table border="1">
 			<tr>
 				<th>이름</th>

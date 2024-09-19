@@ -1,0 +1,28 @@
+@import url("index.css");
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td {
+	padding: 5px;
+}
+#name, #subject {
+	height: 25px;
+}
+#name, #subject, #content {
+	font-size: 12pt;
+}
+#subject {
+	width: 350px;
+}
+#subjectDiv, #contentDiv{
+	color: red;
+	font-size: 8pt;
+	font-weight: bold;
+}
+#boardWriteForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 30px auto;
+}

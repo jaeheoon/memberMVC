@@ -26,18 +26,23 @@ th, td {
 #addr1, #addr2 {
 	width: 80%;
 }
-div {
+#memberWriteForm div {
 	color: red;
 	font-size: 9px;
 	font-weight: bold;
 }
+#memberWriteForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 30px auto;
+	text-align: left;
+}
 </style>
 </head>
 <body>
-	<h3>
-		<img alt="홈" src="../image/짱구.jpg" width="150px" height="250px" onclick="location.href='../index.do'" style="cursor: pointer;"> 회원가입
-	</h3>
-	<form action="./write.do" method="post" name="memberWriteForm" id="memberWriteForm">
+	<form name="memberWriteForm" id="memberWriteForm">
+		<jsp:include page="../main/header.jsp" />
 		<table border="1">
 			<tr>
 				<th>이름</th>

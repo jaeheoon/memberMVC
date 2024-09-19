@@ -27,13 +27,17 @@
 /* 유효성 검사 jQuery & ajax로 실행 - 강사님꺼*/
 $(function(){
 	$('#loginBtn').click(function(){
-		$('idDiv').empty();
-		$('pwdDiv').empty();
+		$('#idDiv').html('');
+		$('#pwdDiv').html('');
 		
-		if($('#id').val() == '')
+		if($('#id').val() == '') {
 			$('#idDiv').html('아이디를 입력해주세요.');
-		else if($('#pwd').val() == '')
+			$('#pwdDiv').html('');
+		}
+		else if($('#pwd').val() == '') {
+			$('#idDiv').html('');
 			$('#pwdDiv').html('비밀번호를 입력해주세요.');
+		}
 		else
 			$.ajax({
 				type: 'post',
@@ -47,9 +51,13 @@ $(function(){
 				success: function(data) {
 					//alert(data.trim());
 					console.log(data.trim());
-					if(data.trim() == 'fail') alert('아이디 또는 비밀번호가 틀렸습니다.');
+					if(data.trim() == 'fail') {
+						$('#idDiv').html('');
+						$('#pwdDiv').html('');
+						$('#loginResult').html('아이디 또는 비밀번호가 틀렸습니다.');
+					}
 					else {
-						alert(data.trim() + '님이 로그인 하셨습니다.');
+						//alert(data.trim() + '님이 로그인 하셨습니다.');
 						location.href='../index.do';
 					}
 				},
